@@ -19,6 +19,8 @@ RANT = (
 
 
 def main():
+    if not 1 <= len(RANT) <= 400:
+        raise ValueError("rant must be 1-400 characters, got %d" % len(RANT))
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as handle:
         handle.write(RANT)
